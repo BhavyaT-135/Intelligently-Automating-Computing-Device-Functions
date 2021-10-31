@@ -1,0 +1,17 @@
+Framework: Mediapipe by Google provides ML Solutions.
+Hand Tracking: - Palm Detection
+		- Hand Landmarks
+Cross Platform format
+
+-----------------------------------------
+Packages
+
+-opencv-python
+-mediapipe
+
+Pip install^^
+-----------------------------------------
+HandTrackingMin.py => Module for hand tracking
+-----------------------------------------
+
+cap => video object
