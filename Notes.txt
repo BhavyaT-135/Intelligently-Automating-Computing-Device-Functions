@@ -15,3 +15,14 @@ HandTrackingMin.py => Module for hand tracking
 -----------------------------------------
 
 cap => video object
+
+------------------------------------------
+
+The landmarks we get are ratios of the screen, we can multiply it to
+the screensize to get the size.
+
+We get the ids, and the landmarks as on x-axis and y-axis.
+
+Transforming these landmarks to a list.
+
+Later we can make a module out of this to create more projects.
