@@ -26,3 +26,22 @@ We get the ids, and the landmarks as on x-axis and y-axis.
 Transforming these landmarks to a list.
 
 Later we can make a module out of this to create more projects.
+
+--------------------------------------------
+The mediapipe website (google.github.io/mediapipe/solutions/hands) 
+has all the information and values for the landmarks, i.e.
+value no. 4 (for thumb tip) and 8 (for index finger tip).
+---------------------------------------------
+
+Midpoint of the circle transforms into green when the length
+is reduced below 50.
+
+----------------------------------------------
+Packages
+
+To change the volume of the Device, we will be using a python
+Audio Windows library "pycaw" by AndreMiras on GitHub.
+
+We need to Pip install the pycaw package using the following command:
+
+>> pip install pycaw
