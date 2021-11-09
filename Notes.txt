@@ -28,6 +28,12 @@ Transforming these landmarks to a list.
 Later we can make a module out of this to create more projects.
 
 --------------------------------------------
+Module based project -> Will use a previously created module for 
+hand tracking.
+
+Setting the width cam and height cam, initializing the basic 
+setup and creating object of the module.
+
 The mediapipe website (google.github.io/mediapipe/solutions/hands) 
 has all the information and values for the landmarks, i.e.
 value no. 4 (for thumb tip) and 8 (for index finger tip).
