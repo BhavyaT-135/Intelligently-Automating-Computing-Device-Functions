@@ -18,9 +18,7 @@ class handDetector():
         self.mpDraw = mp.solutions.drawing_utils
         self.tipIds = [4, 8, 12, 16, 20]
 
-
     def findHands(self, img, draw=True):
-
 
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
@@ -29,9 +27,9 @@ class handDetector():
         if self.results.multi_hand_landmarks:
             for handLms in self.results.multi_hand_landmarks:
                 if draw:
-                    self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
+                    self.mpDraw.draw_landmarks(
+                        img, handLms, self.mpHands.HAND_CONNECTIONS)
         return img
-
 
     def findPosition(self, img, handNo=0, draw=True):
 
@@ -50,7 +48,7 @@ class handDetector():
                 yList.append(cy)
                 # print(id, cx, cy)
                 self.lmList.append([id, cx, cy])
-        
+
                 if draw:
                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
             xmin, xmax = min(xList), max(xList)
@@ -59,13 +57,11 @@ class handDetector():
 
             if draw:
                 cv2.rectangle(img, (bbox[0] - 20, bbox[1] - 20),
-                        (bbox[2] + 20, bbox[3] + 20), (0, 255, 0), 2)
+                              (bbox[2] + 20, bbox[3] + 20), (0, 255, 0), 2)
 
         return self.lmList, bbox
 
-
     def fingersUp(self):
-
 
         fingers = []
         # Thumb
@@ -82,9 +78,7 @@ class handDetector():
                 fingers.append(0)
         return fingers
 
-
     def findDistance(self, p1, p2, img, draw=True):
-
 
         x1, y1 = self.lmList[p1][1], self.lmList[p1][2]
         x2, y2 = self.lmList[p2][1], self.lmList[p2][2]
@@ -102,8 +96,8 @@ class handDetector():
 
 def main():
 
-
     pTime = 0
+    cTime = 0
     cap = cv2.VideoCapture(1)
     detector = handDetector()
 
@@ -123,6 +117,7 @@ def main():
 
         cv2.imshow("Image", img)
         cv2.waitKey(1)
+
 
 if __name__ == "__main__":
     main()
