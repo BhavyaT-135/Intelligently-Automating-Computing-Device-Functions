@@ -3,6 +3,8 @@ import mediapipe as mp
 import time
 import math
 
+from mediapipe.python.solutions.hands import HAND_CONNECTIONS
+
 
 class handDetector():
     def __init__(self, mode=False, maxHands=2, detectionCon=0.5, trackCon=0.5):
@@ -50,14 +52,14 @@ class handDetector():
                 self.lmList.append([id, cx, cy])
 
                 if draw:
-                    cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
+                    cv2.circle(img, (cx, cy), 5, (174, 132, 191), cv2.FILLED)
             xmin, xmax = min(xList), max(xList)
             ymin, ymax = min(yList), max(yList)
             bbox = xmin, ymin, xmax, ymax
 
             if draw:
                 cv2.rectangle(img, (bbox[0] - 20, bbox[1] - 20),
-                              (bbox[2] + 20, bbox[3] + 20), (0, 255, 0), 2)
+                              (bbox[2] + 20, bbox[3] + 20), (205, 212, 141), 2)
 
         return self.lmList, bbox
 
@@ -85,10 +87,10 @@ class handDetector():
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
 
         if draw:
-            cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
-            cv2.circle(img, (x2, y2), 15, (255, 0, 255), cv2.FILLED)
-            cv2.line(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
-            cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
+            cv2.circle(img, (x1, y1), 15, (186, 136, 140), cv2.FILLED)
+            cv2.circle(img, (x2, y2), 15, (186, 136, 140), cv2.FILLED)
+            cv2.line(img, (x1, y1), (x2, y2), (186, 136, 140), 3)
+            cv2.circle(img, (cx, cy), 15, (202, 228, 253), cv2.FILLED)
 
         length = math.hypot(x2 - x1, y2 - y1)
         return length, img, [x1, y1, x2, y2, cx, cy]
