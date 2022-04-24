@@ -4,7 +4,7 @@ from math import hypot
 import screen_brightness_control as sbc
 import numpy as np
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
