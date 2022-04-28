@@ -51,3 +51,36 @@ Audio Windows library "pycaw" by AndreMiras on GitHub.
 We need to Pip install the pycaw package using the following command:
 
 >> pip install pycaw
+
+----------------------------------------------
+
+Making modifications and filterations:
+
+* Find hands and filter it based on size. Since when we measure the
+difference between the thumb and the index finger, it will give
+us very small values. We aim to normalize these values by resizing
+the hand and then check the difference.*
+
+We need a bounding box of a hand, but the mediapipe library doesnt
+supply this information by default. We will do this with the help of
+self-written code.
+
+# Filter based on size
+
+# Find distance bw index and the thumb
+
+# Convert Volume
+	Changing linear scale into logrithmic scale.
+
+# Reduce Resolution to make it smoother
+
+# Check fingers up
+
+# Check if pinky is down set volume
+
+# Drawings
+
+# Frame Rate
+
+
+-----------------------------------------------
